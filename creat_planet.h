@@ -1,12 +1,16 @@
-#pragma once
+#ifndef CREAT_PLANET_H
+#define CREAT_PLANET_H
+
 #include<GL/glut.h>
+#include<algorithm>
+
 class Planet
 {
 public:
 
     void drawPlanet(GLfloat radius, GLfloat distance, GLfloat angle, GLfloat mat_ambient[], GLfloat mat_diffuse[], GLfloat mat_specular[], GLfloat mat_emission[], GLfloat mat_shininess);
-    //°ë¾¶,  ÔËĞĞ¾àÀë,  ½Ç¶È
-    //¹â·´Éä, Âş·´Éä, ¾µÃæ·´Éä, ×Ô·¢¹âÊôĞÔ, ¹âÔó¶È
-
-    void setupLights(void);
+    //åŠå¾„,  è¿è¡Œè·ç¦»,  è§’åº¦
+    //å…‰åå°„, æ¼«åå°„, é•œé¢åå°„, è‡ªå‘å…‰å±æ€§, å…‰æ³½åº¦
 };
+
+#endif
