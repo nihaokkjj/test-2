@@ -3,45 +3,45 @@
 #include <cstdlib>
 #include <ctime>
 
-// ¶¨ÒåĞÇÔÆÁ£×Ó½á¹¹Ìå
+// å®šä¹‰æ˜Ÿäº‘ç²’å­ç»“æ„ä½“
 struct NebulaParticle {
-    float x, y, z;  // Á£×ÓÎ»ÖÃ
-    float r, g, b;  // Á£×ÓÑÕÉ«
-    float alpha;    // Á£×ÓÍ¸Ã÷¶È
+    float xï¼Œ yï¼Œ z;  // ç²’å­ä½ç½®
+    float rï¼Œ gï¼Œ b;  // ç²’å­é¢œè‰²
+    float alpha;    // ç²’å­é€æ˜åº¦
 };
 
-// ĞÇÔÆÀà
+// æ˜Ÿäº‘ç±»
 class Nebula {
-public:
-    static const int NUM_PARTICLES = 1000;  // Á£×ÓÊıÁ¿
+å…¬å…±:
+    static const int NUM_PARTICLES = 500;  // ç²’å­æ•°é‡
     NebulaParticle particles[NUM_PARTICLES];
 
-    // ³õÊ¼»¯ĞÇÔÆÁ£×Ó
+    // åˆå§‹åŒ–æ˜Ÿäº‘ç²’å­
     void initnebula() {
         srand(static_cast<unsigned int>(time(nullptr)));
         for (int i = 0; i < NUM_PARTICLES; ++i) {
-            // Ëæ»úÉú³ÉÁ£×ÓÎ»ÖÃ
-            particles[i].x = (static_cast<float>(rand()) / RAND_MAX - 0.5f) * 10.0f;
-            particles[i].y = (static_cast<float>(rand()) / RAND_MAX - 0.5f) * 10.0f;
-            particles[i].z = (static_cast<float>(rand()) / RAND_MAX - 0.5f) * 10.0f;
+            // éšæœºç”Ÿæˆç²’å­ä½ç½®
+            particles[i]ã€‚x = (static_cast<float>(rand()) / RAND_MAX - 0.5f) * 10.0f;
+            particles[i]ã€‚y = (static_cast<float>(rand()) / RAND_MAX - 0.5f) * 10.0f;
+            particles[i]ã€‚z = (static_cast<float>(rand()) / RAND_MAX - 0.5f) * 10.0f;
 
-            //// Ëæ»úÉú³ÉÁ£×ÓÑÕÉ«£¨ÒÔ×ÏÉ«µ÷ÎªÖ÷Ä£ÄâĞÇÔÆ£©
-            //particles[i].r = 0.5f + static_cast<float>(rand()) / RAND_MAX * 0.5f;
-            //particles[i].g = 0.0f + static_cast<float>(rand()) / RAND_MAX * 0.2f;
-            //particles[i].b = 0.5f + static_cast<float>(rand()) / RAND_MAX * 0.5f;
+            // éšæœºç”Ÿæˆç²’å­é¢œè‰²ï¼ˆä»¥ç´«è‰²è°ƒä¸ºä¸»æ¨¡æ‹Ÿæ˜Ÿäº‘ï¼‰
+            particles[i]ã€‚r = 0.5f + static_cast<float>(rand()) / RAND_MAX * 0.5f;
+            particles[i]ã€‚g = 0.0f + static_cast<float>(rand()) / RAND_MAX * 0.2f;
+            particles[i]ã€‚b = 0.5f + static_cast<float>(rand()) / RAND_MAX * 0.5f;
 
-            //// Ëæ»úÉú³ÉÁ£×ÓÍ¸Ã÷¶È
-            //particles[i].alpha = static_cast<float>(rand()) / RAND_MAX * 0.3f;
+            // éšæœºç”Ÿæˆç²’å­é€æ˜åº¦
+            particles[i]ã€‚alpha = static_cast<float>(rand()) / RAND_MAX * 0.3f;
         }
     }
 
-    // »æÖÆĞÇÔÆ
+    // ç»˜åˆ¶æ˜Ÿäº‘
     void drawnebula() {
 
         glBegin(GL_POINTS);
         for (int i = 0; i < NUM_PARTICLES; ++i) {
-            //glColor4f(particles[i].r, particles[i].g, particles[i].b, particles[i].alpha);
-            glVertex3f(particles[i].x, particles[i].y, particles[i].z);
+            glColor4f(particles[i]ã€‚r, particles[i]ã€‚g, particles[i]ã€‚b, particles[i]ã€‚alpha);
+            glVertex3f(particles[i]ã€‚x, particles[i]ã€‚y, particles[i]ã€‚z);
         }
         glEnd();
 
