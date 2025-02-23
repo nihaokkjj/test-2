@@ -13,7 +13,7 @@ struct NebulaParticle {
 // 星云类
 class Nebula {
 公共:
-    static const int NUM_PARTICLES = 300;  // 粒子数量
+    static const int NUM_PARTICLES = 200;  // 粒子数量
     NebulaParticle particles[NUM_PARTICLES];
 
     // 初始化星云粒子
